@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- generated on 2023-11-04 02:32:43 by Eclipse SUMO GUI Version 1.18.0
+<configuration xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/sumoConfiguration.xsd">
+
+    <input>
+        <net-file value="kilis.net.xml"/>
+        <route-files value="Rota.rou.xml"/>
+    </input>
+
+    <output>
+        <tripinfo-output value="tripinfo.trips.xml"/>
+        <statistic-output value="statistics.stats.xml"/>
+    </output>
+
+    <processing>
+        <ignore-route-errors value="true"/>
+    </processing>
+
+    <routing>
+        <device.rerouting.adaptation-steps value="18"/>
+        <device.rerouting.adaptation-interval value="10"/>
+    </routing>
+
+    <report>
+        <verbose value="true"/>
+        <no-step-log value="true"/>
+    </report>
+
+</configuration>
+-->
+
+<statistics xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/statistic_file.xsd">
+    <performance clockBegin="1900319.62" clockEnd="1900326.90" clockDuration="7.28" traciDuration="12.11" realTimeFactor="998.21" vehicleUpdatesPerSecond="7821.95" personUpdatesPerSecond="0.00" begin="0.00" end="7266.00" duration="7266.00"/>
+    <vehicles loaded="1078" inserted="1078" running="0" waiting="0"/>
+    <teleports total="0" jam="0" yield="0" wrongLane="0"/>
+    <safety collisions="0" emergencyStops="0" emergencyBraking="0"/>
+    <persons loaded="0" running="0" jammed="0"/>
+    <personTeleports total="0" abortWait="0" wrongDest="0"/>
+    <vehicleTripStatistics count="1078" routeLength="406.21" speed="7.86" duration="52.82" waitingTime="8.69" timeLoss="17.09" departDelay="0.01" departDelayWaiting="-1.00" totalTravelTime="56936.00" totalDepartDelay="17.00"/>
+    <pedestrianStatistics number="0" routeLength="0.00" duration="0.00" timeLoss="0.00"/>
+    <rideStatistics number="0"/>
+    <transportStatistics number="0"/>
+</statistics>
