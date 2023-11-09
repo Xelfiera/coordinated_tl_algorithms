@@ -9,5 +9,9 @@ def start():
     sim_path = os.path.join(os.path.dirname(os.path.dirname(__file__)), "Network")
     sim_file = fr"{sim_path}\kilis.sumocfg"
     traci.start([
-        "sumo-gui", "-c", f"{sim_file}", '--start', '--quit-on-end'
+        "sumo-gui", "-c", f"{sim_file}", '--start', '--quit-on-end',
+        "--statistic-output", r"stats\statistics.stats.xml", "--tripinfo-output", r"stats\tripinfo.trips.xml"
     ])
+
+def set_phase(tl_id, state):
+    traci.trafficlight.setRedYellowGreenState(tl_id, state)
