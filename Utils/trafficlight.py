@@ -7,6 +7,7 @@ class TrafficLight:
         self.out_edges = self.get_outgoing_edges()
         self.green_phases = self.get_green_phases()
         self.yellow_phases = self.get_yellow_phases()
+        self.phase_status = 'g'
         self.phase_duration = 0
         self.pre_phase_index = 0
         self.phase_index = 0
