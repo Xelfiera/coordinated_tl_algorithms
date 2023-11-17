@@ -5,12 +5,16 @@ class TrafficLight:
         self.id = tl_id
         self.inc_edges = self.get_incoming_edges()
         self.out_edges = self.get_outgoing_edges()
+        self.pre_inrange_vehicles = None
+        self.inrange_vehicles = []
+        self.webster_vehicle_counts = [0, 0, 0, 0]
+        self.cycle_green_times = [0, 0, 0, 0]
         self.green_phases = self.get_green_phases()
         self.yellow_phases = self.get_yellow_phases()
         self.phase_status = 'g'
         self.phase_duration = 0
         self.pre_phase_index = 0
-        self.phase_index = 0
+        self.cur_phase_index = 0
 
     def get_incoming_edges(self):
         ctrl_lanes = traci.trafficlight.getControlledLanes(self.id)

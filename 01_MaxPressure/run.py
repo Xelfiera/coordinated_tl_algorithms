@@ -11,10 +11,10 @@ def max_pressure():
         for tl_id in traffic_lights.keys():
             if traffic_lights[tl_id].phase_duration == 0:
                 if traffic_lights[tl_id].phase_status == 'g':
-                    traffic_lights[tl_id].pre_phase_index = traffic_lights[tl_id].phase_index
-                    traffic_lights[tl_id].phase_index = calc_max_pressure(traffic_lights[tl_id])
+                    traffic_lights[tl_id].pre_phase_index = traffic_lights[tl_id].cur_phase_index
+                    traffic_lights[tl_id].cur_phase_index = calc_max_pressure(traffic_lights[tl_id])
 
-                    if traffic_lights[tl_id].pre_phase_index != traffic_lights[tl_id].phase_index:
+                    if traffic_lights[tl_id].pre_phase_index != traffic_lights[tl_id].cur_phase_index:
                         set_yellow_phase(traffic_lights[tl_id])
                     else:
                         traffic_lights[tl_id].phase_duration = simulation.tmin
@@ -63,7 +63,7 @@ def get_inrange_vehicles(tl_pos, edges):
     return vehicles_in_range
 
 def set_green_phase(traffic_light):
-    phase_edge = traffic_light.inc_edges[traffic_light.phase_index]
+    phase_edge = traffic_light.inc_edges[traffic_light.cur_phase_index]
     simulation.set_phase(traffic_light.id, traffic_light.green_phases[phase_edge])
     traffic_light.phase_status = 'g'
     traffic_light.phase_duration = simulation.tmin
@@ -72,7 +72,7 @@ def set_yellow_phase(traffic_light):
     phase_edge = traffic_light.inc_edges[traffic_light.pre_phase_index]
     simulation.set_phase(traffic_light.id, traffic_light.yellow_phases[phase_edge])
     traffic_light.phase_status = 'y'
-    traffic_light.phase_duration = 2  # yellow for 2 seconds
+    traffic_light.phase_duration = 2
 
 if __name__ == "__main__":
     max_pressure()
